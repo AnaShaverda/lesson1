@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Header from "./Header/Header";
+import Person from "./Person/Person";
 
 function App() {
+  const [name, setName] = useState("");
+
+  const randomName = () => {
+    let names = ["mariko", "aniko", "niniko"];
+    let randomIndex = Math.floor(Math.random() * names.length);
+    console.log("click");
+    setName(names[randomIndex]);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+
+      <h1 style={{ fontSize: "25px" }}>Hello : {name}</h1>
+      <button onClick={randomName}>click me</button>
+      <div>
+        <Person name="Pikria" age="25" isStudent="true" />
+        <Person name="Aniko" age="25" isStudent="true" />
+        <Person name="Pikria" age="30" isStudent="false" />
+      </div>
+    </>
   );
 }
 

@@ -1,0 +1,15 @@
+.image {
+  width: 150px;
+}
+.displayFlex {
+  display: flex;
+  justify-content: space-between;
+}
+ul li {
+  font-size: 30px;
+  text-transform: uppercase;
+}
+.ul {
+  display: flex;
+  gap: 20px;
+}
